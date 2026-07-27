@@ -1,0 +1,16 @@
+ID,Título,Tipo,Categoría/Tag,Prioridad,Descripción / Pasos,Resultado esperado
+TC-01,Login exitoso con credenciales válidas,UI,smoke,Alta,Ingresar usuario y contraseña válidos en el login y enviar el formulario,Redirige a Accounts Overview con sesión iniciada
+TC-02,Registro de nuevo usuario,UI,regression,Media,Completar formulario de Register con datos válidos y enviar,"Usuario creado, login automático tras registro"
+TC-03,Apertura de nueva cuenta,UI,regression,Media,"Desde Open New Account, seleccionar tipo de cuenta y cuenta de fondeo, confirmar",Nueva cuenta aparece en Accounts Overview con balance inicial correcto
+TC-04,Transferencia de fondos entre cuentas propias,UI,regression,Alta,"Ir a Transfer Funds, seleccionar cuentas origen/destino y monto, confirmar",Balances de ambas cuentas se actualizan correctamente
+TC-05,Pago de factura (Bill Pay),UI,regression,Media,"Completar formulario de Bill Pay con datos de payee y monto, enviar",Confirmación visible y balance de cuenta origen descontado
+TC-06,Login vía API,API,smoke,Alta,GET /login/{username}/{password} con credenciales válidas,"200 OK, retorna datos del customer"
+TC-07,Obtener cuentas de un customer,API,regression,Media,GET /customers/{id}/accounts,"200 OK, retorna lista de cuentas del customer"
+TC-08,Obtener detalle de una cuenta,API,regression,Media,GET /accounts/{id},"200 OK, retorna tipo de cuenta y balance correctos"
+TC-09,Historial de transacciones de una cuenta,API,regression,Media,GET /accounts/{id}/transactions,"200 OK, retorna transacciones esperadas de la cuenta"
+TC-10,Escenario encadenado: crear-verificar-actualizar-verificar cuenta,API,"regression, chained",Alta,1) POST /createAccount 2) GET /customers/{id}/accounts (verificar) 3) POST /transfer hacia la nueva cuenta (update) 4) GET /accounts/{id}/transactions (verificar),"Cuenta creada, visible en el listado, balance actualizado y transacción registrada correctamente"
+TC-11,Login con credenciales inválidas,UI,negative,Alta,Ingresar usuario o contraseña incorrectos en el login,"Mensaje de error visible, sin acceso al sistema"
+TC-12,Transferencia con fondos insuficientes,API,negative,Alta,POST /transfer con un monto mayor al balance disponible,"Respuesta de error controlada (no 500), sin cambio en balances"
+TC-13,Consulta de cuenta inexistente,API,negative,Media,GET /accounts/999999 (ID inexistente),404 Not Found o mensaje de error correspondiente
+TC-14,Transferencia con monto inválido,UI,negative,Media,"Intentar transferir con monto negativo, cero, texto o campo vacío","Validación en el formulario, ninguna transacción creada"
+TC-15,Transferencias parametrizadas (data-driven),API,data-driven,Alta,"POST /transfer con múltiples datasets: monto válido, monto 0, monto negativo, monto mayor al balance, monto excesivo",Cada dataset produce el resultado esperado (éxito o rechazo según corresponda)

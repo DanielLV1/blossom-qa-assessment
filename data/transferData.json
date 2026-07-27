@@ -1,0 +1,11 @@
+{
+    "transferUsers": {
+        "standard_user": {
+            "cuentaOrigen": "44535",
+            "cuentaDestino": "44535",
+            "monto": "200",
+            "montoInvalid": "abc",
+            "montoNegativo": "-100"
+        }
+    }
+}

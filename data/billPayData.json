@@ -1,0 +1,14 @@
+{
+    "billPayData": {
+        "electric_bill": {
+            "name": "Electric Company",
+            "address": "123 Energy St",
+            "city": "Power City",
+            "state": "Electricity",
+            "zipCode": "90210",
+            "phone": "555-0199",
+            "accountNumber": "98765",
+            "amount": "50.00"
+        }
+    }
+}

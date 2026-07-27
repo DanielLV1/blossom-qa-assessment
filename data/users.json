@@ -1,0 +1,13 @@
+{
+    "loginUsers": {
+        "standard_user": {
+            "username": "jejeuwu",
+            "password": "salida",
+            "name": "prueba salida"
+        },
+        "failure_user": {
+            "username": "erroneo",
+            "password": "pruba123abc222"
+        }
+    }
+}

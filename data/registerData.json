@@ -1,0 +1,16 @@
+{
+    "registerUsers": {
+        "standard_user": {
+            "firstName": "prueba",
+            "lastName": "salida",
+            "address": "Calle 123",
+            "city": "Lima",
+            "state": "Lima",
+            "zipCode": "12345",
+            "phone": "123456789",
+            "ssn": "123456789",
+            "username": "jejeuwu",
+            "password": "salida"
+        }
+    }
+}
