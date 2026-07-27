@@ -128,6 +128,7 @@ test.describe('API Tests', () => {
 
         const finalDetailRes = await apiClient.getAccountDetail(fromAccountId)
         const finalDetail = await finalDetailRes.json()
+        console.log(`BUG DETECTADO: La API de Parabank permite transferir dinero superando el saldo disponible (genera saldo negativo) y no valida fondos suficientes.`)
         expect(finalDetail.balance).toBe(initialBalance + 9999.00)
     })
 
@@ -159,6 +160,7 @@ test.describe('API Tests', () => {
             const response = await apiClient.transfer(fromAccountId, toAccountId, data.amount)
             
             if (data.shouldFail) {
+                console.log(`BUG DETECTADO: La API de Parabank permite transferencias con montos invalidos (tipo: ${data.description}, monto: ${data.amount}) y responde con 200 OK en lugar de 400.`)
                 expect(response.status()).toBe(400)
             } else {
                 expect(response.status()).toBe(200)

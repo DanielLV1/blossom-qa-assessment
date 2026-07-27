@@ -25,7 +25,10 @@ export default defineConfig({
   /* Global timeout per test */
   timeout: 15000,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ['html'],
+    ['json', { outputFile: 'results.json' }]
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: process.env.BASE_URL || 'https://parabank.parasoft.com/parabank/index.htm',

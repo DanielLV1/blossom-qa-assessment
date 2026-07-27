@@ -45,6 +45,7 @@ test('TC-14 - Transferencia con monto invalido', async ({ loginPage, transferPag
     for (const monto of montosInvalidos) {
         await transferPage.goToTransferFunds()
         await transferPage.transferFunds(cuentaOrigen, cuentaDestino, monto)
+        console.log(`BUG DETECTADO: El formulario de transferencia de la UI permite ingresar montos invalidos (monto: ${monto}) y procesa la operacion mostrando "Transfer Complete!".`)
         await expect(transferPage.page.locator('h1').filter({ hasText: 'Transfer Complete!' })).not.toBeVisible()
     }
 })

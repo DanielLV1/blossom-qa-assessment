@@ -104,4 +104,31 @@ El proyecto incluye un pipeline listo para producción utilizando **GitHub Actio
 *   Se ejecuta automáticamente en cada `push` o `pull_request` hacia las ramas principales (`main` o `master`).
 *   Instala de manera limpia todas las dependencias y binarios de los navegadores.
 *   Ejecuta la suite completa de pruebas.
-*   Publica el reporte interactivo HTML de Playwright como un artefacto descargable
+*   Publica el reporte interactivo HTML de Playwright como un artefacto descargable.
+
+---
+
+## Casos de Prueba
+
+Antes de escribir una sola linea de codigo, se diseno el conjunto completo de casos de prueba. El archivo `Blossom_QE_Test_Cases - Test Cases.csv` (en la raiz del proyecto) contiene los 15 casos cubiertos por la suite, organizados con su ID, titulo, tipo (UI o API), tag de categoria, prioridad, pasos y resultado esperado.
+
+Es el punto de partida: si quieres entender que se esta probando y por que, empieza ahi antes de revisar el codigo.
+
+---
+
+## Reporte de Resultados y Evidencia Visual
+
+Al finalizar cada ejecucion, Playwright genera un reporte interactivo en HTML. Para verlo:
+
+1. Ve a la pestana **Actions** en el repositorio de GitHub.
+2. Abre la ultima ejecucion completada.
+3. En la seccion **Artifacts** al final de la pagina, descarga el archivo `playwright-report`.
+4. Descomprimelo y abre el archivo `index.html` en tu navegador.
+
+Dentro del reporte podras ver el resultado de cada caso de prueba. Para los tests de interfaz de usuario que fallan, Playwright captura automaticamente:
+*   Una **captura de pantalla** del momento exacto del fallo.
+*   Un **video** completo de la navegacion desde el inicio del test.
+*   Una **traza interactiva** que permite reproducir paso a paso lo que hizo el test.
+
+Todo esto queda embebido directamente en el reporte, sin necesidad de configuracion adicional.
+
