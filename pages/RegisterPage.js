@@ -24,7 +24,7 @@ export class RegisterPage extends BasePage {
         const uniqueUsername = `usr_${rand}`
         const uniqueSsn = `${Math.floor(100000000 + Math.random() * 900000000)}`
         const uniquePhone = `${Math.floor(100000000 + Math.random() * 900000000)}`
-        
+
         await this.registerInitial.click()
         await this.firstNameInput.waitFor({ state: 'visible' })
         await this.firstNameInput.fill(registerUsers[user].firstName)
@@ -49,8 +49,9 @@ export class RegisterPage extends BasePage {
     async clickRegister() {
         await this.registerLink.click()
     }
+    /*Register estandard*/
 
-    async registerStandard(user = 'standard_user') {
+    /*async registerStandard(user = 'standard_user') {
         await this.registerInitial.click()
         await this.firstNameInput.waitFor({ state: 'visible' })
         await this.firstNameInput.fill(registerUsers[user].firstName)
@@ -71,4 +72,5 @@ export class RegisterPage extends BasePage {
             lastName: registerUsers[user].lastName
         }
     }
+    /**/
 }

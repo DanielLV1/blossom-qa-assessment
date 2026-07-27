@@ -17,8 +17,8 @@ Este proyecto es una suite de pruebas automatizadas para la plataforma bancaria 
 
 ## Justificación de Tecnologías
 
-*   **Playwright:** Elegido sobre Selenium/Cypress debido a su velocidad de ejecución natively paralela, excelente auto-waiting integrado, soporte multiplataforma listo para usar (Chromium, Firefox, WebKit) y herramientas avanzadas de trace debugging.
-*   **JavaScript (ES6):** Proporciona una curva de aprendizaje mínima y compatibilidad nativa con la infraestructura moderna de desarrollo de software.
+*   **Playwright:** Elegido debido a su velocidad de ejecución natively paralela, auto-waiting integrado, soporte multiplataforma listo para usar y herramientas de trace debugging.
+*   **JavaScript:** Compatibilidad nativa con la infraestructura moderna de desarrollo de software.
 *   **Page Object Model (POM):** Implementado para desacoplar la estructura HTML de la lógica de los tests, garantizando alta mantenibilidad y reduciendo la duplicidad de selectores.
 *   **API Client Pattern:** Centraliza las peticiones de servicios REST para simplificar los flujos encadenados y el manejo de cabeceras.
 
@@ -27,7 +27,7 @@ Este proyecto es una suite de pruebas automatizadas para la plataforma bancaria 
 ## Configuración y Requisitos
 
 ### Requisitos Previos
-*   [Node.js](https://nodejs.org/) (versión 18 o superior recomendada)
+*   [Node.js](versión 18 o superior recomendada)
 *   npm (incluido por defecto con Node.js)
 
 ### Instalación
@@ -104,4 +104,4 @@ El proyecto incluye un pipeline listo para producción utilizando **GitHub Actio
 *   Se ejecuta automáticamente en cada `push` o `pull_request` hacia las ramas principales (`main` o `master`).
 *   Instala de manera limpia todas las dependencias y binarios de los navegadores.
 *   Ejecuta la suite completa de pruebas.
-*   Publica el reporte interactivo HTML de Playwright como un artefacto descargable (disponible por 30 días).
+*   Publica el reporte interactivo HTML de Playwright como un artefacto descargable
