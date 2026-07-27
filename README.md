@@ -4,20 +4,14 @@ Este proyecto es una suite de pruebas automatizadas para la plataforma bancaria 
 
 ---
 
-## Estructura del Framework
+## Estructura del Proyecto
 
-```
-├── .github/workflows/       # Configuración del pipeline de CI (GitHub Actions)
-├── api/                     # Clientes de API encapsulados (BankApiClient.js)
-├── data/                    # Archivos de datos de prueba en formato JSON (usuarios, cuentas, facturas)
-├── fixtures/                # Inyección de dependencias y configuración de Page Objects
-├── pages/                   # Clases Page Object Model para la navegación UI
-├── tests/
-│   ├── api/                 # Specs/Pruebas automatizadas de API
-│   └── ui/                  # Specs/Pruebas automatizadas de Interfaz de Usuario (UI)
-├── playwright.config.js     # Configuración global de Playwright
-└── README.md                # Documentación del proyecto
-```
+*   `.github/workflows/`: Configuración de GitHub Actions para el pipeline de CI.
+*   `api/`: Cliente HTTP (`BankApiClient.js`) para peticiones directas al backend.
+*   `data/`: Archivos JSON con los datos de las pruebas (usuarios, montos, etc.).
+*   `fixtures/`: Inicialización de páginas y setup global de Playwright.
+*   `pages/`: Clases POM (Page Object Model) con selectores y acciones de la UI.
+*   `tests/`: Casos de prueba ordenados en carpetas `api/` y `ui/`.
 
 ---
 
